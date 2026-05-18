@@ -5,6 +5,7 @@
   --fg:#1a1a1a;
   --muted:#6b6b6b;
     --rule:#ffffff;
+  --link:#2a5ec0;
   --step--1: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
   --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --step-1: clamp(1.25rem, 1.18rem + 0.36vw, 1.45rem);
@@ -21,6 +22,7 @@
   --color-fg:     var(--fg);
   --color-muted:  var(--muted);
   --color-rule:   var(--rule);
+  --color-link:   var(--link);
 
   --text-step--1: var(--step--1);
   --text-step-0:  var(--step-0);
@@ -41,6 +43,7 @@
       --fg:    #ededed;
       --muted: #8a8a8a;
       --rule:  #262626;
+      --link:  #7da8e8;
     }
 }
 
@@ -66,3 +69,11 @@ body {
   color: var(--fg);
   font-family: var(--font-sans);
 }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+a:hover { opacity: 0.7; }

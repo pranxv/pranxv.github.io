@@ -7,28 +7,40 @@ export default function Home() {
       </header>
       <div className="sm:max-w-[480px]">
         <p className="pt-3">
-          I'm a Software Engineer at American Express, where I work on the
-          Platform GraphQL team building federated GraphQL infrastructure that
-          powers experiences across the company.
+          I'm a Software Engineer at{" "}
+          <a
+            href="https://www.americanexpress.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            American Express
+          </a>
+          , where I work on the Platform GraphQL team building federated
+          GraphQL infrastructure that powers experiences across the company.
         </p>
         <p className="pt-3">
           Before this, I was an SRE on the Identity and Auth platform, keeping the systems that authenticate millions of cardmembers running
           cleanly.
         </p>
         <p className="pt-3">
-          On the side, I used to run creatives, social media and talking to brands for collab with local run club in Bengaluru - Main mission [prev: Indiranagar Run Club (IRC)], while running with them.
+          I am pretty serious in the space of endurance sports,and I run, or pick up my bike 🚲 and go for long rides. I train crossfit, compete in Hyrox, and always being active nonetheless.
+          <br className="pt-2"/>
+          -lowkey obsessed with the craft side of technical apparel. Running wear, shoe drops, eyewear, you name it
         </p>
           <p className="pt-3">
-          I actually like the space of endurance sports, and I run, or pick up my bike 🚲 and go for long rides. I train crossfit, compete in Hyrox, and always being actve nonetheless.
+          I actually used to run creatives, social media and bringing in brand collabs, etc with a local run club in Bengaluru -   <a
+            href="https://www.instagram.com/indiranagar_runclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Main Mission
+          </a>  [prev: Indiranagar Run Club (IRC)], while running with them.
         </p>
       </div>
       <div className="border-t border-muted/40 pt-8 flex flex-col sm:max-w-[480px]">
         <p>
-         Always finding ways to fund my obsession pallete, try me here: {" "}
-          <a
-            href="mailto:kushalpranavkumar@gmail.com"
-            className="underline underline-offset-4 hover:no-underline"
-          >
+         Always finding oppurtunities to fund my obsession palette, try me here: {" "}
+          <a href="mailto:kushalpranavkumar@gmail.com">
             kushalpranavkumar@gmail.com
           </a>
         </p>
