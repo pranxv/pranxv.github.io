@@ -16,7 +16,7 @@ export default function Home() {
           >
             American Express
           </a>
-          , where I work on the Platform GraphQL team building federated
+          , where I work with the Platform GraphQL team building federated
           GraphQL infrastructure that powers experiences across the company.
         </p>
         <p className="pt-3">
