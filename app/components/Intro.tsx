@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useIntro } from "./IntroContext";
 
 const WORDS = [
   { text: "hello", lang: "en" },
@@ -17,6 +18,7 @@ type Phase = "playing" | "exiting" | "done";
 export default function Intro() {
   const [index, setIndex] = useState(0);
   const [cphase, setPhase] = useState<Phase>("playing");
+  const { setDone } = useIntro();
 
   // Skip if already seen this session, or user prefers reduced motion
   useEffect(() => {
@@ -24,8 +26,9 @@ export default function Intro() {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (seen || prefersReduced) {
       setPhase("done");
+      setDone(true);
     }
-  }, []);
+  }, [setDone]);
 
   // State machine: advance words, then exit, then done
   useEffect(() => {
@@ -33,6 +36,7 @@ export default function Intro() {
     if (cphase === "exiting") {
       const id = setTimeout(() => {
         setPhase("done");
+        setDone(true);
         sessionStorage.setItem(SESSION_KEY, "1");
       }, EXIT_DURATION);
       return () => clearTimeout(id);
@@ -44,7 +48,7 @@ export default function Intro() {
       const id = setTimeout(() => setPhase("exiting"), WORD_DURATION);
       return () => clearTimeout(id);
     }
-  }, [index, cphase]);
+  }, [index, cphase, setDone]);
 
   // Escape key skips the splash
   useEffect(() => {
