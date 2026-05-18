@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="mx-auto flex w-full flex-col gap-8 p-4 pb-12 text-step--1 text-fg sm:w-[800px] sm:p-8 text-dark">
       <header className="flex flex-col">
-        <h1> Kushal Pranav Kumar </h1>
+        <h1 className="font-medium"> Kushal Pranav Kumar </h1>
         <p className="italic text-muted"> Software engineer </p>
       </header>
       <div className="sm:max-w-[480px]">
@@ -12,6 +12,7 @@ export default function Home() {
             href="https://www.americanexpress.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="font-medium"
           >
             American Express
           </a>
@@ -23,9 +24,9 @@ export default function Home() {
           cleanly.
         </p>
         <p className="pt-3">
-          I am pretty serious in the space of endurance sports,and I run, or pick up my bike 🚲 and go for long rides. I train crossfit, compete in Hyrox, and always being active nonetheless.
+          I am pretty serious in the space of endurance sports,and I run, or pick up my bike 🚲 and go for long rides. I train crossfit, compete in HYROX, and always being active nonetheless.
           <br className="pt-2"/>
-          -lowkey obsessed with the craft side of technical apparel. Running wear, shoe drops, eyewear, you name it
+          -lowkey obsessed with the craft side of technical apparel. Running wear, shoe drops, eyewear, you name it!
         </p>
           <p className="pt-3">
           I actually used to run creatives, social media and bringing in brand collabs, etc with a local run club in Bengaluru -   <a
@@ -34,12 +35,12 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             Main Mission
-          </a>  [prev: Indiranagar Run Club (IRC)], while running with them.
+          </a>  (formerly Indiranagar Run Club), while running with them.
         </p>
       </div>
       <div className="border-t border-muted/40 pt-8 flex flex-col sm:max-w-[480px]">
         <p>
-         Always finding oppurtunities to fund my obsession palette, try me here: {" "}
+         Always finding opportunities to fund my obsession palette, try me here: {" "}
           <a href="mailto:kushalpranavkumar@gmail.com">
             kushalpranavkumar@gmail.com
           </a>
@@ -69,7 +70,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           {" "}
-          X (formally Twitter){" "}
+          X (formerly Twitter){" "}
         </a>
         <a
           href="https://www.youtube.com/watch?v=StMltAX0mp0"
