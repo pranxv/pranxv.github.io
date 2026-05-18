@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const WORDS = [
   { text: "hello", lang: "en" },
   { text: "नमस्ते", lang: "hi" },
-  { text: "bonsoir", lang: "fr" },
+  { text: "Allô", lang: "fr" },
 ];
 
 const WORD_DURATION = 700;
