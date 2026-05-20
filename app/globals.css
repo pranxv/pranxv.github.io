@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --bg:#fefefe;
-  --fg:#1a1a1a;
-  --muted:#6b6b6b;
+  --bg:#2a0805;
+  --fg:#ffffe8;
+  --muted:#b39c84;
     --rule:#ffffff;
-  --link:#2a5ec0;
+  --link:#e0a868;
   --step--1: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
   --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --step-1: clamp(1.25rem, 1.18rem + 0.36vw, 1.45rem);
@@ -39,11 +39,11 @@
 
 @media (prefers-color-scheme: dark) {
    :root {
-      --bg:    #111111;
-      --fg:    #ededed;
-      --muted: #8a8a8a;
+      --bg:    #2a0805;
+      --fg:    #ffffe8;
+      --muted: #b39c84;
       --rule:  #262626;
-      --link:  #7da8e8;
+      --link:  #e0a868;
     }
 }
 
