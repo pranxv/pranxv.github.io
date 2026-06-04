@@ -58,6 +58,23 @@
   }
 }
 
+/* Hover-only alternating cross-fade for intrusive-thoughts index cards.
+   Both keyframes run on the same clock, so they're always exactly opposed:
+   one is fully visible while the other is hidden, with a quick blend at
+   each handoff. Applied via `group-hover:animate-[...]` so the cycle only
+   runs while the card is hovered; off-hover removes the animation and the
+   static `opacity-*` classes snap image 1 back to visible. */
+@keyframes fadeLoopA {
+  0%, 40%   { opacity: 1; }
+  50%, 90%  { opacity: 0; }
+  100%      { opacity: 1; }
+}
+@keyframes fadeLoopB {
+  0%, 40%   { opacity: 0; }
+  50%, 90%  { opacity: 1; }
+  100%      { opacity: 0; }
+}
+
 :focus-visible {
   outline: 2px solid var(--fg);
   outline-offset: 3px;

@@ -2,9 +2,8 @@
  * Single source of truth for the "intrusive thoughts" index.
  *
  * Each entry's URL is /intrusive-thoughts/<id>/<slug>. The id stays
- * stable forever (it's the canonical number in the index), the slug
- * can change without breaking analytics because view tracking keys on
- * the slug — see `views.ts`.
+ * stable forever (it's the canonical number in the index); the slug is
+ * human-readable and can change without losing index ordering.
  *
  * Add a new entry by appending to THOUGHTS and creating a matching
  * `app/intrusive-thoughts/<id>/<slug>/page.tsx` for its body.
@@ -19,6 +18,13 @@ export type IntrusiveThought = {
   publishedAt: string;
   /** ISO 8601 date (YYYY-MM-DD). Defaults to publishedAt if never edited. */
   updatedAt: string;
+  /**
+   * Optional cover image(s) for the index card.
+   * - 1 image: static cover.
+   * - 2 images: cross-fade on hover (img[0] visible by default, img[1] on hover).
+   * - undefined: minimal row, no image.
+   */
+  cover?: { src: string; alt: string }[];
 };
 
 export const THOUGHTS: IntrusiveThought[] = [
@@ -30,6 +36,16 @@ export const THOUGHTS: IntrusiveThought[] = [
       "On Murakami, an ATFL injury, and why I stopped tracking pace.",
     publishedAt: "2026-06-04",
     updatedAt: "2026-06-05",
+    cover: [
+      {
+        src: "/running-bengaluru.jpg",
+        alt: "Standing on a tree-lined Bengaluru road after a run",
+      },
+      {
+        src: "/running-murakami.jpg",
+        alt: "Holding Murakami's What I Talk About When I Talk About Running on a flight",
+      },
+    ],
   },
 ];
 
