@@ -1,5 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./components/Reveal";
 import GradientBackground from "./components/GradientBackground";
+import LocalTime from "./components/LocalTime";
 
 export default function Home() {
   return (
@@ -58,6 +61,41 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
+        <Reveal index={5}>
+          <section className="flex flex-col gap-4 sm:max-w-[640px]">
+            <div>
+              <span className="inline-block rounded-full border border-muted/50 px-3 py-1 text-step--2">
+                Intrusive thoughts
+              </span>
+            </div>
+            <Link href="/running" className="group flex flex-col gap-3">
+              <div className="rounded-2xl bg-muted/10 p-8 flex items-center justify-center transition-colors group-hover:bg-muted/15">
+                <div className="relative h-[420px] w-full max-w-[320px]">
+                  <Image
+                    src="/running-bengaluru.jpg"
+                    alt="Standing on a tree-lined Bengaluru road after a run"
+                    fill
+                    sizes="320px"
+                    className="rounded-xl object-contain opacity-100 transition-opacity duration-500 delay-500 group-hover:opacity-0 group-hover:delay-0"
+                  />
+                  <Image
+                    src="/running-murakami.jpg"
+                    alt="Holding Murakami's What I Talk About When I Talk About Running on a flight"
+                    fill
+                    sizes="320px"
+                    className="rounded-xl object-contain opacity-0 transition-opacity duration-500 delay-0 group-hover:opacity-100 group-hover:delay-500"
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="font-medium">my relationship with running</p>
+                <p className="text-muted">
+                  On Murakami, an ATFL injury, and why I stopped tracking pace.
+                </p>
+              </div>
+            </Link>
+          </section>
+        </Reveal>
         <div className="border-t border-muted/40 pt-8 flex flex-col sm:max-w-[480px]">
           <p>
             Always finding opportunities to fund my obsession palette, try me
@@ -120,6 +158,9 @@ export default function Home() {
             }}
           ></iframe>
         </div>
+        <footer className="border-t border-muted/40 pt-8 sm:max-w-[480px]">
+          <LocalTime />
+        </footer>
       </main>
     </>
   );
