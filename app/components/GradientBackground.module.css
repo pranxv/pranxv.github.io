@@ -1,11 +1,9 @@
-/* Fixed, behind-everything backdrop for the mesh gradient.
-   The WebGL canvas fills this layer; background-color is a warm
-   fallback shown before the shader paints (or if WebGL is unavailable). */
+/* Fixed, behind-everything pure-white backdrop. */
 .root {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background-color: #8a2e12;
+  background-color: #ffffff;
 }
