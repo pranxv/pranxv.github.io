@@ -1,12 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "../components/Reveal";
-import GradientBackground from "../components/GradientBackground";
+import Reveal from "@/app/components/Reveal";
+import GradientBackground from "@/app/components/GradientBackground";
+import { formatDate, getThought } from "@/app/intrusive-thoughts/data";
+
+/**
+ * Intrusive thought #1 — "my relationship with running".
+ *
+ * Reads its title/dates/slug from the shared `data.ts` registry so the
+ * index and the article page never drift. LocalTime is mounted once in
+ * the root layout (app/layout.tsx) — every page picks it up for free.
+ */
+
+const thought = getThought(1, "running")!;
 
 export const metadata = {
-  title: "my relationship with running — Kushal Pranav Kumar",
-  description:
-    "On picking up Murakami on a Delhi–Bengaluru flight, recovering from an ATFL injury, and why I stopped tracking pace.",
+  title: `${thought.title} — Kushal Pranav Kumar`,
+  description: thought.excerpt,
 };
 
 export default function RunningPage() {
@@ -15,11 +25,22 @@ export default function RunningPage() {
       <GradientBackground />
       <main className="relative z-[1] mx-auto flex w-full flex-col gap-8 p-4 pb-12 text-step--1 text-fg sm:w-[800px] sm:p-8 text-dark">
         <header className="flex flex-col">
-          <Link href="/" className="text-muted italic mb-4">
-            ← back
+          <Link
+            href="/intrusive-thoughts"
+            className="text-muted italic mb-4"
+          >
+            ← intrusive thoughts
           </Link>
-          <h1 className="font-medium"> my relationship with running </h1>
-          <p className="italic text-muted"> a tracker, but not the kind you think </p>
+          <p className="text-muted tabular-nums">
+            no. {thought.id.toString().padStart(2, "0")}
+          </p>
+          <h1 className="font-medium">{thought.title}</h1>
+          <p className="italic text-muted">
+            a tracker, but not the kind you think
+          </p>
+          <p className="pt-2 text-muted">
+            Updated {formatDate(thought.updatedAt)}
+          </p>
         </header>
 
         <Reveal index={1}>
@@ -36,8 +57,8 @@ export default function RunningPage() {
               <Image
                 src="/running-murakami.jpg"
                 alt="Holding Murakami's What I Talk About When I Talk About Running on a flight"
-                width={1200}
-                height={900}
+                width={1500}
+                height={2000}
                 className="rounded-2xl w-full h-full object-cover aspect-[3/4]"
                 priority
               />
@@ -67,11 +88,11 @@ export default function RunningPage() {
               the second wave of covid ended, and since then and now, alot has
               changed since then. Yes there was strava before strava was cool,
               I actually had no clue about heart rate zones, paces, etc but my
-              why back then was probably about making up the time I (and we all
-              lost to covid) confined in our comfortable houses, most of us
-              spending time with our family, zoom meetings, and making banana
-              breads/ dalgona coffee. I missed movement, and hence I started
-              running.
+              why back then was probably about making up the time I (and we
+              all lost to covid) confined in our comfortable houses, most of
+              us spending time with our family, zoom meetings, and making
+              banana breads/ dalgona coffee. I missed movement, and hence I
+              started running.
             </p>
           </Reveal>
 
@@ -93,9 +114,7 @@ export default function RunningPage() {
           </Reveal>
 
           <Reveal index={6}>
-            <p className="pt-3 italic text-muted">
-              this is my tracker.
-            </p>
+            <p className="pt-3 italic text-muted">this is my tracker.</p>
           </Reveal>
         </div>
       </main>
