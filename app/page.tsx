@@ -10,7 +10,7 @@ export default function Home() {
           <h1 className="font-medium"> Kushal Pranav Kumar </h1>
           <p className="italic text-muted"> Software engineer </p>
         </header>
-        <div className="sm:max-w-[480px]">
+        <div id="about" className="sm:max-w-[480px] scroll-mt-8">
           <Reveal index={1}>
             <p className="pt-3">
               I'm a Software Engineer at{" "}
@@ -58,7 +58,7 @@ export default function Home() {
             </p>
           </Reveal>
         </div>
-        <div className="border-t border-muted/40 pt-8 flex flex-col sm:max-w-[480px]">
+        <div id="contact" className="border-t border-muted/40 pt-8 flex flex-col sm:max-w-[480px] scroll-mt-8">
           <p>
             Always finding opportunities to fund my obsession palette, try me
             here:{" "}
@@ -67,7 +67,7 @@ export default function Home() {
             </a>
           </p>
         </div>
-        <div className="border-t border-muted/40 pt-8 flex flex-col gap-1 sm:max-w-[480px]">
+        <div id="socials" className="border-t border-muted/40 pt-8 flex flex-col gap-1 sm:max-w-[480px] scroll-mt-8">
           <p> or here: </p>
           <a
             href="https://www.linkedin.com/in/kushalpranav/"
