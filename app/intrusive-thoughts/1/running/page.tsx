@@ -86,7 +86,7 @@ export default function RunningPage() {
               I am not ashamed to admit, I picked up running as a sport without
               any expectations initially before it was even cool shortly after
               the second wave of covid ended, and since then and now, alot has
-              changed since then. Yes there was strava before strava was cool,
+              changed. Yes there was strava before strava was cool,
               I actually had no clue about heart rate zones, paces, etc but my
               why back then was probably about making up the time I (and we
               all lost to covid) confined in our comfortable houses, most of
